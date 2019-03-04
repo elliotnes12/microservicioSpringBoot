@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ingresar Cliente</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <style>
+        .section{
+            margin:10px 0px 0px 0px;
+        }
+        .flex-center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flex-center container">
+         <form th:object="${clientemodel}" th:action="@{/cliente/form}"  method="post">
+             <div class="section">
+                 <p>
+                    Name
+                 </p>
+                 <input type="text" th:field="*{name}"  />
+             </div>
+             <div class="section">
+                 <p>
+                     LastName
+                 </p>
+                 <input type="text" th:field="*{apellido}"  />
+             </div>
+             <div class="section">
+                 <p>
+                     Email
+                 </p>
+                 <input type="email" th:field="*{email}"  />
+             </div>
+             <div class="section">
+                 <p>
+                     Creado
+                 </p>
+                 <input type="text" th:field="*{fecha}"  />
+             </div>
+             <div class="section">
+                 <input type="hidden" th:field="*{id}" />
+                 <input type="submit" class="btn btn-primary" value="Agregar" />
+             </div>
+         </form>
+    </div>
+</body>
+</html>
